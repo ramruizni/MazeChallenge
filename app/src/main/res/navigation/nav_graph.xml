@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/showListFragment">
+
+    <fragment
+        android:id="@+id/showListFragment"
+        android:name="com.example.mazechallenge.ui.fragment.ShowListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_show_list" >
+        <action
+            android:id="@+id/action_showListFragment_to_showDetailFragment"
+            app:destination="@id/showDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_showListFragment_to_favoriteListFragment"
+            app:destination="@id/favoriteListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/showDetailFragment"
+        android:name="com.example.mazechallenge.ui.fragment.ShowDetailFragment"
+        android:label="fragment_show_detail"
+        tools:layout="@layout/fragment_show_detail" >
+        <argument
+            android:name="Show"
+            app:argType="com.example.mazechallenge.model.Show" />
+        <action
+            android:id="@+id/action_showDetailFragment_to_episodeListFragment"
+            app:destination="@id/episodeListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodeListFragment"
+        android:name="com.example.mazechallenge.ui.fragment.EpisodeListFragment"
+        android:label="fragment_episode_list"
+        tools:layout="@layout/fragment_episode_list" >
+        <argument
+            android:name="Show"
+            app:argType="com.example.mazechallenge.model.Show" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteListFragment"
+        android:name="com.example.mazechallenge.ui.fragment.FavoriteListFragment"
+        android:label="fragment_favorite_list"
+        tools:layout="@layout/fragment_favorite_list" >
+        <action
+            android:id="@+id/action_favoriteListFragment_to_showDetailFragment"
+            app:destination="@id/showDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>

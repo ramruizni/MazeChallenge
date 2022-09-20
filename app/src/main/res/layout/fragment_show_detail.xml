@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_show_detail_scene"
+    tools:context=".ui.fragment.ShowDetailFragment">
+
+    <ImageView
+        android:id="@+id/ivOriginal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/tvNameDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
+        android:scrollbars="vertical"
+        android:text="Desc1\ndesc1\ndesc3\ndesc4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvGenre1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_genre"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:text="Science-Fiction"
+        app:layout_constraintBottom_toTopOf="@id/tvSchedule"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGenre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_genre"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:text="Science-Fiction"
+        app:layout_constraintStart_toEndOf="@+id/tvGenre1"
+        app:layout_constraintTop_toTopOf="@id/tvGenre1" />
+
+    <TextView
+        android:id="@+id/tvSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuesday and Wednesday"
+        app:layout_constraintBottom_toTopOf="@id/tvSummary"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:textAlignment="textEnd"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvScheduleHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22:00"
+        app:layout_constraintBottom_toTopOf="@id/tvSchedule"
+        app:layout_constraintEnd_toEndOf="@id/tvSchedule"
+        />
+
+    <TextView
+        android:id="@+id/tvNameDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Doctor Strange in the Multiverse of Madness"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@id/tvGenre1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabToggleFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="Mark or Unmark as Favorite"
+        android:src="@drawable/ic_favorite_unmarked"
+        app:layout_constraintBottom_toBottomOf="@id/ivOriginal"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEpisodesAlt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="Watch List of Episodes"
+        android:src="@drawable/ic_episodes"
+        app:layout_constraintBottom_toBottomOf="@id/ivOriginal"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

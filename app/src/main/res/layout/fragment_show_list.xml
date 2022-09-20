@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="4dp"
+    app:layoutDescription="@xml/fragment_show_list_scene"
+    tools:context=".ui.fragment.ShowListFragment">
+
+    <EditText
+        android:id="@+id/svName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@android:color/transparent"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+        android:hint="Search by Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/ivSearch"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/svName"
+        app:layout_constraintTop_toTopOf="@+id/svName">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_search"
+            app:tint="?attr/colorOnSurface" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ivClear"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/svName"
+        app:layout_constraintTop_toTopOf="@+id/svName">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_clear"
+            app:tint="?attr/colorOnSurface" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svName" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:contentDescription="Favorites"
+        android:src="@drawable/ic_favorites"
+        app:layout_constraintBottom_toBottomOf="@+id/rvList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:contentDescription="Settings"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="@+id/fabFavorites"
+        app:layout_constraintEnd_toStartOf="@+id/fabFavorites" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabPeopleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:contentDescription="People Search"
+        android:src="@drawable/ic_people"
+        app:layout_constraintBottom_toBottomOf="@+id/fabFavorites"
+        app:layout_constraintStart_toEndOf="@+id/fabFavorites" />
+-->
+    <TextView
+        android:id="@+id/tvListEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Oops! This didn't\nyield any results!"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rvList"
+        app:layout_constraintEnd_toEndOf="@+id/rvList"
+        app:layout_constraintStart_toStartOf="@+id/rvList"
+        app:layout_constraintTop_toTopOf="@+id/rvList" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
